@@ -112,7 +112,6 @@ export default {
 	  
       if (this.tabs.length > 0) {
         index = this._findIndex(this.tabs, item => item.value === this.value)
-		console.log(index)
         // get .easy-tab all element
         tabs.selectAll('.easy-tab').boundingClientRect(data => {
           width = data[index].width
@@ -141,7 +140,11 @@ export default {
         if (this.useTransition)
           this.sliderTrans = isPadding ? `${width - isPadding}px` : `${width}px`
       }).exec()
-    }
+    },
+		setSliderTransform(offsetX) {
+			console.log(offsetX)
+			this.sliderTrans = offsetX + 'px'
+		}
   }
 }
 </script>
