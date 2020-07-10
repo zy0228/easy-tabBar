@@ -31,7 +31,7 @@ ___
 + 我只是提供了一个思路而已，你可以完全下载下来后自己魔改。喜欢的可以去上面的git址点个star~
 
 # easy-scroll-Bar (小程序版)
-*这个版本其实是来源于下面一个评论的需求。如果你用过头条，scroll-bar其实就是头条顶部bar的效果。用法很简单，像easy-tab-bar一样1s配置爽起来(componts/easy-scroll-bar)*
+*这个版本其实是来源于下面一个评论的需求。如果你用过头条，easy-scroll-bar其实就是头条顶部bar的效果。用法很简单，像easy-tab-bar一样1s配置爽起来(componts/easy-scroll-bar)*
 ___
 ## 配置:
 | props        | type   | require | explain |
