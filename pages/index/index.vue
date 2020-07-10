@@ -1,5 +1,6 @@
 <template>
 	<view class="content">
+		<view class="title">easy-tab-bar</view>
 		<view class="tab-wrapper">
 			<easy-tab-bar
 				ref="tabBar"
@@ -11,7 +12,6 @@
 		</view>
 		<view class="tab-swiper">
 			<swiper
-				@transition="transition"
 				duration="200"
 				:current="currentIndex"
 				@change="change"
@@ -26,6 +26,15 @@
 				</swiper-item>
 			</swiper>
 		</view>
+		<view class="title">easy-scroll-bar</view>
+		<easy-scroll-bar
+			@scrollTabClick="scrollTabClick"
+			:currentIndex="current"
+			:usedTxt="text"
+			ref="scrollTab"
+		>
+		</easy-scroll-bar>
+		<view class="easy-scroll-tab-panel">{{innerContent}}</view>
 	</view>
 </template>
 
@@ -74,13 +83,11 @@ export default {
 				}
 			],
 			currentValue: 0,
-			currentIndex: 0
+			currentIndex: 0,
+			current: 0,
+			innerContent: '热点',
+			text: ['热点', '直播', '图片', '科技', '娱乐', '游戏', '体育', '军事', '时尚', '养生', '									历史', '财经', '搞笑', '国际', '旅游']
 		};
-	},
-	mounted() {
-		setTimeout(() => {
-			console.log(this.$refs.swiper)
-		}, 1000)
 	},
 	methods: {
 		tabClick(value) {
@@ -88,13 +95,11 @@ export default {
 			this.currentIndex = Number(value);
 		},
 		change(e) {
-			console.log('改变了change')
 			this.currentValue = Number(e.detail.current);
 		},
-		transition(e) {
-			let { dx } = e.detail;
-			dx = Math.abs(dx)
-			this.$refs.tabBar.setSliderTransform(dx);
+		scrollTabClick(index) {
+			this.current = Number(index)
+			this.innerContent = this.text[index]
 		}
 	}
 };
@@ -116,7 +121,7 @@ export default {
 	height: 40px;
 }
 .tab-swiper {
-	height: calc(100% - 40px);
+	height: calc(100% - 500px);
 }
 
 swiper {
@@ -131,5 +136,25 @@ swiper-item {
 	color: #ffffff;
 	font-size: 24px;
 	font-weight: bold;
+}
+
+.title {
+	font-size: 18px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #111;
+}
+
+.easy-scroll-tab-panel {
+	position: relative;
+	background-color: #333333;
+	width: 100%;
+	height: 300px;
+	color: #ffffff;
+	font-size: 24px;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 </style>
