@@ -15,15 +15,15 @@ ___
 + data的格式：
 ```
  data: [
-   {
-    label: 'Home',
-		icon: 'cubeic-home',
-		value: 0
-  }, {
-    label: 'Home',
-		icon: 'cubeic-home',
-		value: 1
-  }
+    {
+   	label: 'Home',
+	icon: 'cubeic-home',
+	value: 0
+    }, {
+    	label: 'Home',
+	icon: 'cubeic-home',
+	value: 1
+    }
  ]
 ```
 props中的value值要在data的范围内
