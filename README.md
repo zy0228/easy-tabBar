@@ -41,4 +41,4 @@ ___
 
 这个没什么好说的直接爽起来，同样的你也可以在我的基础上自己魔改~
 
-最后，如果喜欢的话github地址（https://github.com/zy0228/easy-tabBar） 点个赞吧
+最后，如果喜欢的话github地址 https://github.com/zy0228/easy-tabBar 点个赞吧
