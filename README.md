@@ -79,6 +79,7 @@ ___
 + 设置useContentSlider要保证showSlider为true, 默认的slider的宽度为tab的宽度，如果遇到某些场景需要展示的是相对于tab文字内容的宽度的话，那么useContentSlider设置为true即可。
 + 我只是提供了一个思路而已，你可以完全下载下来后自己魔改。喜欢的可以去上面的git址点个star~
 ---
+
 # easy-scroll-Bar (小程序版)
 ### Basic example
 ```
@@ -91,7 +92,6 @@ ___
 	>
 	</easy-scroll-bar>
 </template>
-
 <script>
 export default {
 	data() {
@@ -112,7 +112,7 @@ export default {
 *这个版本其实是来源于下面一个评论的需求。如果你用过头条，easy-scroll-bar其实就是头条顶部 bar的效果。用法很简单(组件所在componts/easy-scroll-bar)*
 ___
 
-## Options:
+### Options
 | props        | type   | require | explain |
 | ------------ | ------ | ------- | ------- |
 | usedTxts     | Array  | true    | 数据源 |
