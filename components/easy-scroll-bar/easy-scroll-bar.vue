@@ -8,6 +8,7 @@
 				:data-index="index"
 				:class="{ 'cube-scroll-nav-bar-item_active': currentIndex === index }"
 				@click="clickHandler(index)"
+				:style="{marginRight: margin+'px'}"
 			>
 				{{text}}
 			</view>
@@ -16,6 +17,13 @@
 </template>
 
 <script>
+/**
+ * Easy Scroll Tabbar Component
+ * @author Snoop Zhang (github: https://github.com/zy0228)
+ * @property {Array} usedTxts 
+ * @property {Number} currentIndex actived value
+ * @property {Number} margin margin-right value
+ */
 const COMPONENT_NAME = 'easy-scroll-bar';
 export default {
 	name: COMPONENT_NAME,
@@ -23,12 +31,16 @@ export default {
 		usedTxts: {
 			type: Array,
 			default() {
-				return ['热点', '直播', '图片', '科技', '娱乐', '游戏', '体育', '军事', '时尚', '养生', '									历史', '财经', '搞笑', '国际', '旅游'];
+				return ['热点', '直播', '图片', '科技', '娱乐', '游戏', '体育', '军事', '时尚', '养生', '历史', '财经', '搞笑', '国际', '旅游'];
 			}
 		},
 		currentIndex: {
 			type: Number,
 			default: 0
+		},
+		margin: {
+			type: Number,
+			default: 10 // margin-right value unit/px
 		}
 	},
 	data() {
@@ -63,7 +75,7 @@ export default {
 					size += this.scrollTabBar[i].width / 2
 					break
 				}
-				size += this.scrollTabBar[i].width
+				size += (this.scrollTabBar[i].width + this.margin)
 			}
 			let translate = middleTranslate - size
 			translate = Math.max(minTranslate, Math.min(0, translate))
