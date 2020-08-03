@@ -1,4 +1,4 @@
-# easy-tabBar (小程序版)
+# easy-tabBar (小程序版https://ext.dcloud.net.cn/plugin?id=2221)
 ### Basic example
 ```
 <template>
